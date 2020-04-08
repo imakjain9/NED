@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Getter
 public class Review {
 
-    @javax.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long Id;
@@ -20,7 +20,7 @@ public class Review {
     private Integer rating;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "destination_id", nullable = false)
+    @JoinColumn(name = "destination_id")
     private Destination destination;
 
 }

@@ -21,7 +21,8 @@ public class DestinationResponse{
     private Integer offer;
     private String bestTime;
     private Integer rating;
-    private List<ReviewResponse> reviewResponseList;
+    private List<ReviewResponse> reviewList;
+    private Integer visited;
 
     public static DestinationResponse create(Destination destination){
         return DestinationResponse.builder()
@@ -33,7 +34,8 @@ public class DestinationResponse{
                 .offer(destination.getOffer())
                 .bestTime(destination.getBestTime())
                 .rating(destination.getRating())
-                .reviewResponseList(destination.getReviews().stream().map(d->ReviewResponse.create(d)).collect(Collectors.toList()))
+                .reviewList(destination.getReviews().stream().map(d->ReviewResponse.create(d)).collect(Collectors.toList()))
+                .visited(destination.getVisited())
                 .build();
     }
 }

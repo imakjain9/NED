@@ -22,7 +22,7 @@ public class DestinationService {
 
     public List<DestinationResponse> getTopDestinations(Integer pageNo, Integer pageSize) {
 
-        Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by("visited"));
+        Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(Sort.Direction.DESC,"visited"));
 
         Page<Destination> pagedResult = destinationRepository.findAll(paging);
 
